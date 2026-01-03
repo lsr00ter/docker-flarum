@@ -173,8 +173,8 @@ services:
       - /mnt/docker/flarum/nginx:/etc/nginx/flarum
 ```
 
-This example install php8-gmp php8-session and php8-brotli with apk  
-You can find a php extension here https://pkgs.alpinelinux.org/packages?name=php8-*&branch=v3.13&arch=x86_64
+This example install php83-gmp php83-session and php83-brotli with apk
+You can find a php extension here https://pkgs.alpinelinux.org/packages?name=php83-*&branch=v3.13&arch=x86_64
 
 ### Install custom extensions
 
@@ -200,7 +200,7 @@ docker exec -ti flarum extension list
 
 ### Custom vhost flarum nginx
 
-File to change the vhost flarum `/etc/nginx/flarum/custom-vhost-flarum.conf`  
+File to change the vhost flarum `/etc/nginx/flarum/custom-vhost-flarum.conf`
 To use file custom-vhost-flarum.conf add volume `/etc/nginx/flarum`
 Create file in `/mnt/docker/flarum/nginx/custom-vhost-flarum.conf`
 
@@ -229,7 +229,7 @@ Add this in `/mnt/docker/flarum/extensions/composer.repositories.txt`
 username|{"type":"vcs","url":"https://github.com/username/my-private-repo"}
 ```
 
-Create a token in github with full control of privates repository  
+Create a token in github with full control of privates repository
 https://github.com/settings/tokens
 
 Add your github token in var environment

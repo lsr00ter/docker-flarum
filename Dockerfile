@@ -3,7 +3,7 @@ FROM alpine:3.20
 LABEL description="Simple forum software for building great communities" \
       maintainer="Magicalex <magicalex@mondedie.fr>"
 
-ARG VERSION=v1.3.0
+ARG VERSION=v1.4.0
 
 ENV GID=991 \
     UID=991 \
@@ -63,6 +63,6 @@ RUN apk add --no-progress --no-cache \
   && setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/nginx
 
 COPY rootfs /
-RUN chmod +x /usr/local/bin/* /etc/s6.d/*/run /etc/s6.d/.s6-svscan/*
+RUN chmod +x /usr/local/bin/* /etc/s6.d/*/run /etc/s6.d/.s6-svscan/* /etc/s6.d/*/finish
 VOLUME /etc/nginx/flarum /flarum/app/extensions /flarum/app/public/assets /flarum/app/storage/logs
 CMD ["/usr/local/bin/startup"]
